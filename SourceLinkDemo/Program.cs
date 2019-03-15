@@ -48,7 +48,7 @@ namespace SourceLinkDemo
                     }
                     else if (result == 2)
                     {
-                        return BadDependency.Math.Add;
+                        return GoodDependency.Math.Add;
                     }
                 }
 
