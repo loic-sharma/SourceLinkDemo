@@ -1,0 +1,10 @@
+<Project>
+  <PropertyGroup>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+    <RepositoryUrl>https://github.com/loic-sharma/SourceLinkDemo</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+
+    <Version>1.0.1</Version>
+  </PropertyGroup>
+</Project>
