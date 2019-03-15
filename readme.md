@@ -2,6 +2,8 @@
 
 ## Demo Notes
 
+See https://github.com/loic-sharma/SourceLinkDemo/tree/demo
+
 ## Setup Instructions
 
 ```ps1
