@@ -6,7 +6,7 @@ namespace SourceLinkDemo
     {
         static void Main(string[] args)
         {
-            var handler = ChooseHandler();
+            var dependency = ChooseDependency();
 
             while (true)
             {
@@ -15,10 +15,10 @@ namespace SourceLinkDemo
 
                 try
                 {
-                    var left = Console.ReadLine();
-                    var right = Console.ReadLine();
+                    var left = int.Parse(Console.ReadLine());
+                    var right = int.Parse(Console.ReadLine());
 
-                    var result = handler(int.Parse(left), int.Parse(right));
+                    var result = dependency(left, right);
 
                     Console.WriteLine();
                     Console.WriteLine($"Result: {result}");
@@ -31,7 +31,7 @@ namespace SourceLinkDemo
             }
         }
 
-        public static Func<int, int, int> ChooseHandler()
+        public static Func<int, int, int> ChooseDependency()
         {
             while (true)
             {
@@ -39,20 +39,13 @@ namespace SourceLinkDemo
                 Console.WriteLine(@"1. ""Bad"" demo");
                 Console.WriteLine(@"2. ""Good"" demo");
 
-                var selection = Console.ReadLine();
-                if (int.TryParse(selection, out var result))
+                switch (Console.ReadLine())
                 {
-                    if (result == 1)
-                    {
-                        return BadDependency.Math.Add;
-                    }
-                    else if (result == 2)
-                    {
-                        return GoodDependency.Math.Add;
-                    }
+                    case "1": return BadDependency.Math.Add;
+                    case "2": return GoodDependency.Math.Add;
                 }
 
-                Console.WriteLine($"Invalid selection '{selection}', please enter either '1' or '2'");
+                Console.WriteLine($"Invalid selection, please enter either '1' or '2'");
                 Console.WriteLine();
             }
         }
